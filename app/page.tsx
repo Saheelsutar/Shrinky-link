@@ -1,101 +1,71 @@
+'use client';
+import { useRouter } from "next/navigation";
+import Navbar from "@/components/Navbar";
+import { Link as LinkIcon, Zap, Rocket, ExternalLink } from "lucide-react";
+import Footer from "@/components/Footer";
 import Image from "next/image";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const router = useRouter();
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  return (
+    <>
+      <Navbar />
+      <div className="bg-mycolor min-h-screen w-full flex flex-col items-center justify-center px-4">
+        <div className="flex flex-col lg:flex-row items-center justify-between lg:justify-around w-full mx-auto ">
+          <div className="text-center lg:text-left lg:w-1/2 p-6">
+            <div className="inline-block mb-3 px-3 py-1 bg-white/20 backdrop-blur-md rounded-full">
+              <span className="text-sm font-medium text-white">Simplify your links, amplify your reach</span>
+            </div>
+
+            <h1 className="font-serif font-bold text-4xl md:text-5xl lg:text-6xl leading-tight text-white mb-6">
+              Shorten. Share. <br />
+              <span className="text-white">Track.</span>
+            </h1>
+
+            <p className="text-lg md:text-xl text-white/90 mb-8 font-light leading-relaxed">
+              Your links, smarter and faster. Create memorable, trackable short URLs in seconds.
+            </p>
+
+            <div className="space-y-4 md:space-y-6 ">
+              <div className="flex flex-col items-center justify-center space-y-3 md:space-y-4">
+                <FeatureItem icon={<LinkIcon size={18} />} text="Shorten long URLs in seconds" />
+                <FeatureItem icon={<Zap size={18} />} text="Fast, reliable, and easy to use" />
+                <FeatureItem icon={<Rocket size={18} />} text="Start shortening now!" />
+                <FeatureItem icon={<ExternalLink size={18} />} text="Get a custom short URL instantly" />
+              </div>
+            </div>
+          </div>
+
+          <div className="lg:w-1/2 flex justify-center">
+            <Image src="/img_1.png" width={100} height={100} quality={100} className="w-72 sm:w-96 lg:w-[450px] max-w-full" alt="" />
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+
+        <div className="flex justify-center items-center mt-6">
+          <div className="w-fit [background:linear-gradient(45deg,#172033,theme(colors.slate.800)_50%,#172033)_padding-box,conic-gradient(from_var(--border-angle),#b8860b80_80%,_#daa520_86%,_#ffd700_90%,_#daa520_94%,_#b8860b80)_border-box] rounded-2xl border-2 border-transparent animate-border mb-10">
+            <button 
+              type="button" 
+              onClick={() => router.push('/shorten')} 
+              className="text-white focus:outline-none bg-slate-800 font-medium rounded-lg text-sm px-2 py-2.5 text-center inline-flex items-center"
+            >
+              <Image width={100} height={100} quality={100} className="h-6 px-2" src="/img_logo.png" alt="" />
+              Get Your Short URL
+            </button>
+          </div>
+        </div>
+      </div>
+      <Footer/>
+    </>
   );
-}
+};
+
+const FeatureItem = ({ icon, text }: { icon: React.ReactNode, text: string }) => (
+  <div className="flex items-center w-full space-x-3 text-white/90">
+    <div className="bg-white/20 backdrop-blur-sm p-2 rounded-full">
+      {icon}
+    </div>
+    <span className="font-medium max-md:text-left">{text}</span>
+  </div>
+  
+);
