@@ -38,7 +38,7 @@ export default function Home() {
           </div>
 
           <div className="lg:w-1/2 flex justify-center">
-            <Image src="/img_1.png" width={100} height={100} quality={100} className="w-72 sm:w-96 lg:w-[450px] max-w-full" alt="" />
+            <Image src="/img_1.png" width={100} height={100} unoptimized className="w-72 sm:w-96 lg:w-[450px] max-w-full" alt="" />
           </div>
         </div>
 
@@ -49,7 +49,7 @@ export default function Home() {
               onClick={() => router.push('/shorten')} 
               className="text-white focus:outline-none bg-slate-800 font-medium rounded-lg text-sm px-2 py-2.5 text-center inline-flex items-center"
             >
-              <Image width={100} height={100} quality={100} className="h-6 px-2" src="/img_logo.png" alt="" />
+              <Image width={50} height={100} unoptimized className="h-6 px-2" src="/img_logo.png" alt="" />
               Get Your Short URL
             </button>
           </div>

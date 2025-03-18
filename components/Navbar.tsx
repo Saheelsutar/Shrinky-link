@@ -9,7 +9,7 @@ const Navbar = () => {
     <nav className="border-gray-200 bg-indigo-300 p-3">
       <div className="max-w-screen-xl flex items-center justify-between mx-auto">
         <div className="flex items-center">
-          <Image width={100} height={100} quality={100} src="/img_logo.png" className="h-9 px-2" alt="Shrinky Link Logo" />
+          <Image width={50} height={100} unoptimized src="/img_logo.png" className="h-9 px-2" alt="Shrinky Link Logo" />
           <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">
             Shrinky Link
           </span>

@@ -77,7 +77,7 @@ const Page = () => {
     <>
       <Navbar />
       <div className='bg-mycolor min-h-screen h-fit max-md:flex-col max-md:items-center  flex justify-center'>
-        <Image width={100} height={100} quality={100} className='w-1/3 h-fit max-md:hidden' src="/login.png" alt="" />
+        <Image width={100} height={100} unoptimized className='w-1/3 h-fit max-md:hidden' src="/login.png" alt="" />
         
         <motion.form 
           className="max-md:w-[90%] mx-auto p-10  m-10 w-[28%] h-fit bg-gray-700  [background:linear-gradient(45deg,#172033,theme(colors.slate.800)_50%,#172033)_padding-box,conic-gradient(from_var(--border-angle),#b8860b80_80%,_#daa520_86%,_#ffd700_90%,_#daa520_94%,_#b8860b80)_border-box] rounded-2xl border-4 border-transparent animate-border"
@@ -121,7 +121,7 @@ const Page = () => {
           </motion.div>
         </motion.form>
 
-        <Image width={100} height={100} quality={100} className='w-1/3 max-md:w-full h-fit' src="/img_2.png" alt="" />
+        <Image width={100} height={100} unoptimized className='w-1/3 max-md:w-full h-fit' src="/img_2.png" alt="" />
       </div>
       <Footer/>
     </>

@@ -1,8 +1,8 @@
-
-import mongoose, { connect } from "mongoose"; // Correct for Mongoose 8
+"use server"
+import mongoose, { connect } from "mongoose"; 
 const connectDB = async () => {
     try {
-        const conn = await connect("mongodb+srv://stud22sys1:mongodb@cluster0.y5kg8.mongodb.net/shrinky");
+        const conn = await connect(`${process.env.MONGO_URL}`);
 
         console.log(`MongoDB Connected: ${conn}`);
     } catch (error) {
