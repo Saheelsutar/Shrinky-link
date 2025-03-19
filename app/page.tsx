@@ -47,9 +47,9 @@ export default function Home() {
             <button 
               type="button" 
               onClick={() => router.push('/shorten')} 
-              className="text-white focus:outline-none bg-slate-800 font-medium rounded-lg text-sm px-2 py-2.5 text-center inline-flex items-center"
+              className="text-white bg-slate-800 font-medium rounded-xl text-sm px-2 py-2.5 text-center inline-flex items-center"
             >
-              <Image width={50} height={100} unoptimized className="h-6 px-2" src="/img_logo.png" alt="" />
+              <Image width={50} height={80} unoptimized className="h-7 px-2" src="/img_logo.png" alt="" />
               Get Your Short URL
             </button>
           </div>
